@@ -21,4 +21,10 @@ public class DepartmentRepository : IDepartmentRepository
     {
         return await appDbContext.Departments.ToListAsync();
     }
+
+    public async Task<Employee> GetEmployeeByEmail(string email)
+    {
+        return await appDbContext.Employees
+            .FirstOrDefaultAsync(e => e.Email == email);
+    }
 }

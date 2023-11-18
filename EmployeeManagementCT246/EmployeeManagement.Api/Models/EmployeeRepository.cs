@@ -85,6 +85,9 @@ namespace EmployeeManagement.Api.Models
             return await query.ToListAsync();
         }
 
-
+        public Task<Employee> GetEmployeeByEmail(string email)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using EmployeeManagement.Models;
+using EmployeeManagement.Models.CustomValidators;
 using System.ComponentModel.DataAnnotations;
 
 public class Employee
@@ -9,6 +10,8 @@ public class Employee
     public string FirstName { get; set; }
     [Required(ErrorMessage = "Lastname is mandatory")]
     public string LastName { get; set; }
+
+    [EmailDomainValidator(AllowedDomain = "pragimtech.com")]
     public string Email { get; set; }
     public DateTime DateOfBirth { get; set; }
     public Gender Gender { get; set; }

@@ -44,41 +44,58 @@ namespace EmployeeManagement.Api.Controllers
                 "Error retrieving data from the database");
             }
         }
+
         [HttpPost]
-        public async Task<ActionResult<Employee>> CreateEmployee([FromBody] Employee employee)
+        public async Task<ActionResult<Employee>> CreateEmployee(Employee employee)
         {
             try
             {
                 if (employee == null)
+                {
                     return BadRequest();
+                }
+
+                var emp = await employeeRepository.GetEmployeeByEmail(employee.Email);
+
+                if (emp != null)
+                {
+                    ModelState.AddModelError("email", "Employee email already in use");
+                    return BadRequest(ModelState);
+                }
+
                 var createdEmployee = await employeeRepository.AddEmployee(employee);
-                return CreatedAtAction(nameof(GetEmployee), new { id = createdEmployee.EmployeeId }, createdEmployee);
+
+                return CreatedAtAction(nameof(GetEmployee), new { id = createdEmployee.EmployeeId },
+                    createdEmployee);
             }
             catch (Exception)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError,
-                "Error creating new employee record");
+                    "Error retrieving data from the database");
             }
         }
 
-        [HttpPut("{id}")]
+
+        [HttpPut()]
         public async Task<ActionResult<Employee>> UpdateEmployee(int id, Employee employee)
         {
             try
             {
-                if (id != employee.EmployeeId)
-                    return BadRequest("Employee ID mismatch");
-                var employeeToUpdate = await employeeRepository.GetEmployee(id);
+                var employeeToUpdate = await employeeRepository.GetEmployee(employee.EmployeeId);
+
                 if (employeeToUpdate == null)
-                    return NotFound($"Employee with Id = {id} not found");
+                {
+                    return NotFound($"Employee with Id = {employee.EmployeeId} not found");
+                }
+
                 return await employeeRepository.UpdateEmployee(employee);
             }
             catch (Exception)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError,
-                "Error updating data");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error update data");
             }
         }
+
         [HttpDelete("{id:int}")]
         public async Task<ActionResult<Employee>> DeleteEmployee(int id)
         {

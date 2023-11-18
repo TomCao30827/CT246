@@ -65,6 +65,10 @@
       "PackagePath": "staticwebassets\\images\\mary.png"
     },
     {
+      "Id": "E:\\CT246\\EmployeeManagementCT246\\EmployeeManagement.Web\\wwwroot\\images\\nophoto.jpg",
+      "PackagePath": "staticwebassets\\images\\nophoto.jpg"
+    },
+    {
       "Id": "E:\\CT246\\EmployeeManagementCT246\\EmployeeManagement.Web\\wwwroot\\images\\sam.jpg",
       "PackagePath": "staticwebassets\\images\\sam.jpg"
     },

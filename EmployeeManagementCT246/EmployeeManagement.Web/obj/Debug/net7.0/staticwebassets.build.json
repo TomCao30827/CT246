@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pM43S26Yf7kNxKy3mqqGWOdR7Pt9x47zcNw3oVFRdE4=",
+  "Hash": "LiyvENqFUZsTcMz043In/bzwNChL7NttUL/tmeiSUQg=",
   "Source": "EmployeeManagement.Web",
   "BasePath": "_content/EmployeeManagement.Web",
   "Mode": "Default",
@@ -304,6 +304,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\mary.png"
+    },
+    {
+      "Identity": "E:\\CT246\\EmployeeManagementCT246\\EmployeeManagement.Web\\wwwroot\\images\\nophoto.jpg",
+      "SourceId": "EmployeeManagement.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\CT246\\EmployeeManagementCT246\\EmployeeManagement.Web\\wwwroot\\",
+      "BasePath": "_content/EmployeeManagement.Web",
+      "RelativePath": "images/nophoto.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\nophoto.jpg"
     },
     {
       "Identity": "E:\\CT246\\EmployeeManagementCT246\\EmployeeManagement.Web\\wwwroot\\images\\sam.jpg",
