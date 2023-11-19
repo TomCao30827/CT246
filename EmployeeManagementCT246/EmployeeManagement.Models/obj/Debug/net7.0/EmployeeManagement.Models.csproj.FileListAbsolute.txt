@@ -10,3 +10,15 @@ E:\CT246\EmployeeManagementCT246\EmployeeManagement.Models\obj\Debug\net7.0\Empl
 E:\CT246\EmployeeManagementCT246\EmployeeManagement.Models\obj\Debug\net7.0\refint\EmployeeManagement.Models.dll
 E:\CT246\EmployeeManagementCT246\EmployeeManagement.Models\obj\Debug\net7.0\EmployeeManagement.Models.pdb
 E:\CT246\EmployeeManagementCT246\EmployeeManagement.Models\obj\Debug\net7.0\ref\EmployeeManagement.Models.dll
+E:\CT251\CT246\EmployeeManagementCT246\EmployeeManagement.Models\bin\Debug\net7.0\EmployeeManagement.Models.deps.json
+E:\CT251\CT246\EmployeeManagementCT246\EmployeeManagement.Models\bin\Debug\net7.0\EmployeeManagement.Models.dll
+E:\CT251\CT246\EmployeeManagementCT246\EmployeeManagement.Models\bin\Debug\net7.0\EmployeeManagement.Models.pdb
+E:\CT251\CT246\EmployeeManagementCT246\EmployeeManagement.Models\obj\Debug\net7.0\EmployeeManagement.Models.GeneratedMSBuildEditorConfig.editorconfig
+E:\CT251\CT246\EmployeeManagementCT246\EmployeeManagement.Models\obj\Debug\net7.0\EmployeeManagement.Models.AssemblyInfoInputs.cache
+E:\CT251\CT246\EmployeeManagementCT246\EmployeeManagement.Models\obj\Debug\net7.0\EmployeeManagement.Models.AssemblyInfo.cs
+E:\CT251\CT246\EmployeeManagementCT246\EmployeeManagement.Models\obj\Debug\net7.0\EmployeeManagement.Models.csproj.CoreCompileInputs.cache
+E:\CT251\CT246\EmployeeManagementCT246\EmployeeManagement.Models\obj\Debug\net7.0\EmployeeManagement.Models.sourcelink.json
+E:\CT251\CT246\EmployeeManagementCT246\EmployeeManagement.Models\obj\Debug\net7.0\EmployeeManagement.Models.dll
+E:\CT251\CT246\EmployeeManagementCT246\EmployeeManagement.Models\obj\Debug\net7.0\refint\EmployeeManagement.Models.dll
+E:\CT251\CT246\EmployeeManagementCT246\EmployeeManagement.Models\obj\Debug\net7.0\EmployeeManagement.Models.pdb
+E:\CT251\CT246\EmployeeManagementCT246\EmployeeManagement.Models\obj\Debug\net7.0\ref\EmployeeManagement.Models.dll

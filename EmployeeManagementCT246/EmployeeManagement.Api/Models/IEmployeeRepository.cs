@@ -1,4 +1,5 @@
 ﻿using EmployeeManagement.Models;
+using EmployeeManagement.Models.Dtos;
 
 namespace EmployeeManagement.Api.Models
 {
@@ -6,7 +7,7 @@ namespace EmployeeManagement.Api.Models
     {
         Task<IEnumerable<Employee>> GetEmployees();
         Task<Employee> GetEmployee(int employeeId);
-        Task<Employee> AddEmployee(Employee employee);
+        Task<Employee> AddEmployee(AddEmployeeDto employee);
         Task<Employee> UpdateEmployee(Employee employee);
         Task<Employee> GetEmployeeByEmail(string email);
         Task<Employee> DeleteEmployee(int employeeId);

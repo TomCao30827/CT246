@@ -1,5 +1,6 @@
 ﻿using EmployeeManagement.Api.Models;
 using EmployeeManagement.Models;
+using EmployeeManagement.Models.Dtos;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -45,34 +46,48 @@ namespace EmployeeManagement.Api.Controllers
             }
         }
 
-        [HttpPost]
-        public async Task<ActionResult<Employee>> CreateEmployee(Employee employee)
+        //[HttpPost]
+        //public async Task<ActionResult<Employee>> CreateEmployee(Employee employee)
+        //{
+        //    try
+        //    {
+        //        if (employee == null)
+        //        {
+        //            return BadRequest();
+        //        }
+
+        //        var emp = await employeeRepository.GetEmployeeByEmail(employee.Email);
+
+        //        if (emp != null)
+        //        {
+        //            ModelState.AddModelError("email", "Employee email already in use");
+        //            return BadRequest(ModelState);
+        //        }
+
+        //        var createdEmployee = await employeeRepository.AddEmployee(employee);
+
+        //        return CreatedAtAction(nameof(GetEmployee), new { id = createdEmployee.EmployeeId },
+        //            createdEmployee);
+        //    }
+        //    catch (Exception)
+        //    {
+        //        return StatusCode(StatusCodes.Status500InternalServerError,
+        //            "Error retrieving data from the database");
+        //    }
+        //}
+
+        public async Task<ActionResult<Employee>> CreateEmployee(AddEmployeeDto employee)
         {
-            try
+            var emp = await employeeRepository.GetEmployeeByEmail(employee.Email);
+
+            if (emp != null)
             {
-                if (employee == null)
-                {
-                    return BadRequest();
-                }
-
-                var emp = await employeeRepository.GetEmployeeByEmail(employee.Email);
-
-                if (emp != null)
-                {
-                    ModelState.AddModelError("email", "Employee email already in use");
-                    return BadRequest(ModelState);
-                }
-
-                var createdEmployee = await employeeRepository.AddEmployee(employee);
-
-                return CreatedAtAction(nameof(GetEmployee), new { id = createdEmployee.EmployeeId },
-                    createdEmployee);
+                return BadRequest("Email already been taken");
             }
-            catch (Exception)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError,
-                    "Error retrieving data from the database");
-            }
+
+            var createdEmployee = await employeeRepository.AddEmployee(employee);
+
+            return Ok(createdEmployee);
         }
 
 

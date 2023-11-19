@@ -9,45 +9,47 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = EmployeeManagement.Web
 build_property.RootNamespace = EmployeeManagement.Web
-build_property.ProjectDir = E:\CT246\EmployeeManagementCT246\EmployeeManagement.Web\
+build_property.ProjectDir = E:\CT251\CT246\EmployeeManagementCT246\EmployeeManagement.Web\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = E:\CT246\EmployeeManagementCT246\EmployeeManagement.Web
+build_property.MSBuildProjectDirectory = E:\CT251\CT246\EmployeeManagementCT246\EmployeeManagement.Web
 build_property._RazorSourceGeneratorDebug = 
 
-[E:/CT246/EmployeeManagementCT246/EmployeeManagement.Web/App.razor]
+[E:/CT251/CT246/EmployeeManagementCT246/EmployeeManagement.Web/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/CT246/EmployeeManagementCT246/EmployeeManagement.Web/Pages/EditEmployee.razor]
+[E:/CT251/CT246/EmployeeManagementCT246/EmployeeManagement.Web/Pages/EditEmployee.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdEVtcGxveWVlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/CT246/EmployeeManagementCT246/EmployeeManagement.Web/Pages/EmployeeDetails.razor]
+[E:/CT251/CT246/EmployeeManagementCT246/EmployeeManagement.Web/Pages/EmployeeDetails.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVEZXRhaWxzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/CT246/EmployeeManagementCT246/EmployeeManagement.Web/Pages/EmployeeList.razor]
+[E:/CT251/CT246/EmployeeManagementCT246/EmployeeManagement.Web/Pages/EmployeeList.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVMaXN0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/CT246/EmployeeManagementCT246/EmployeeManagement.Web/_Imports.razor]
+[E:/CT251/CT246/EmployeeManagementCT246/EmployeeManagement.Web/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/CT246/EmployeeManagementCT246/EmployeeManagement.Web/Shared/MainLayout.razor]
+[E:/CT251/CT246/EmployeeManagementCT246/EmployeeManagement.Web/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-s2kthycp59
 
-[E:/CT246/EmployeeManagementCT246/EmployeeManagement.Web/Shared/NavMenu.razor]
+[E:/CT251/CT246/EmployeeManagementCT246/EmployeeManagement.Web/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-qs0b5e9nst
 
-[E:/CT246/EmployeeManagementCT246/EmployeeManagement.Web/Pages/Error.cshtml]
+[E:/CT251/CT246/EmployeeManagementCT246/EmployeeManagement.Web/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/CT246/EmployeeManagementCT246/EmployeeManagement.Web/Pages/_Host.cshtml]
+[E:/CT251/CT246/EmployeeManagementCT246/EmployeeManagement.Web/Pages/_Host.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

@@ -4593,11 +4593,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\CT246\\EmployeeManagementCT246\\EmployeeManagement.Web\\EmployeeManagement.Web.csproj",
+      "projectUniqueName": "E:\\CT251\\CT246\\EmployeeManagementCT246\\EmployeeManagement.Web\\EmployeeManagement.Web.csproj",
       "projectName": "EmployeeManagement.Web",
-      "projectPath": "E:\\CT246\\EmployeeManagementCT246\\EmployeeManagement.Web\\EmployeeManagement.Web.csproj",
+      "projectPath": "E:\\CT251\\CT246\\EmployeeManagementCT246\\EmployeeManagement.Web\\EmployeeManagement.Web.csproj",
       "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "E:\\CT246\\EmployeeManagementCT246\\EmployeeManagement.Web\\obj\\",
+      "outputPath": "E:\\CT251\\CT246\\EmployeeManagementCT246\\EmployeeManagement.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -4612,15 +4612,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "E:\\CT246\\EmployeeManagementCT246\\EmployeeManagement.Models\\EmployeeManagement.Models.csproj": {
-              "projectPath": "E:\\CT246\\EmployeeManagementCT246\\EmployeeManagement.Models\\EmployeeManagement.Models.csproj"
+            "E:\\CT251\\CT246\\EmployeeManagementCT246\\EmployeeManagement.Models\\EmployeeManagement.Models.csproj": {
+              "projectPath": "E:\\CT251\\CT246\\EmployeeManagementCT246\\EmployeeManagement.Models\\EmployeeManagement.Models.csproj"
             }
           }
         }
@@ -4687,7 +4686,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

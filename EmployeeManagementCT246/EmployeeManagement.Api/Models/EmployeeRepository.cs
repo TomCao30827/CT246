@@ -1,4 +1,5 @@
 ﻿using EmployeeManagement.Models;
+using EmployeeManagement.Models.Dtos;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -29,12 +30,29 @@ namespace EmployeeManagement.Api.Models
         //}
 
 
-        public async Task<Employee> AddEmployee(Employee employee)
+        //public async Task<Employee> AddEmployee(Employee employee)
+        //{
+        //    var result = await appDbContext.Employees.AddAsync(employee);
+        //    await appDbContext.SaveChangesAsync();
+        //    return result.Entity;
+        //}
+
+        public async Task<Employee> AddEmployee(AddEmployeeDto employee)
         {
-            var result = await appDbContext.Employees.AddAsync(employee);
+            var result = await appDbContext.Employees.AddAsync(new Employee
+            {
+                FirstName = employee.FirstName,
+                LastName = employee.LastName,
+                Email = employee.Email,
+                DateOfBirth = employee.DateOfBirth,
+                DepartmentId = employee.DepartmentId,
+                Gender = employee.Gender,
+                PhotoPath = employee.PhotoPath,
+            });
             await appDbContext.SaveChangesAsync();
             return result.Entity;
         }
+
         public async Task<Employee> UpdateEmployee(Employee employee)
         {
             var result = await appDbContext.Employees
@@ -85,9 +103,11 @@ namespace EmployeeManagement.Api.Models
             return await query.ToListAsync();
         }
 
-        public Task<Employee> GetEmployeeByEmail(string email)
+        public async Task<Employee?> GetEmployeeByEmail(string email)
         {
-            throw new NotImplementedException();
+            return await appDbContext.Employees.FirstOrDefaultAsync(e => e.Email == email);
         }
+
+
     }
 }

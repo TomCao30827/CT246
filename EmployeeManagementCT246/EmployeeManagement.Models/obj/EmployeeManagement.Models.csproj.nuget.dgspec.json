@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\CT246\\EmployeeManagementCT246\\EmployeeManagement.Models\\EmployeeManagement.Models.csproj": {}
+    "E:\\CT251\\CT246\\EmployeeManagementCT246\\EmployeeManagement.Models\\EmployeeManagement.Models.csproj": {}
   },
   "projects": {
-    "E:\\CT246\\EmployeeManagementCT246\\EmployeeManagement.Models\\EmployeeManagement.Models.csproj": {
+    "E:\\CT251\\CT246\\EmployeeManagementCT246\\EmployeeManagement.Models\\EmployeeManagement.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\CT246\\EmployeeManagementCT246\\EmployeeManagement.Models\\EmployeeManagement.Models.csproj",
+        "projectUniqueName": "E:\\CT251\\CT246\\EmployeeManagementCT246\\EmployeeManagement.Models\\EmployeeManagement.Models.csproj",
         "projectName": "EmployeeManagement.Models",
-        "projectPath": "E:\\CT246\\EmployeeManagementCT246\\EmployeeManagement.Models\\EmployeeManagement.Models.csproj",
+        "projectPath": "E:\\CT251\\CT246\\EmployeeManagementCT246\\EmployeeManagement.Models\\EmployeeManagement.Models.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "E:\\CT246\\EmployeeManagementCT246\\EmployeeManagement.Models\\obj\\",
+        "outputPath": "E:\\CT251\\CT246\\EmployeeManagementCT246\\EmployeeManagement.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -65,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
