@@ -1,6 +1,7 @@
 ﻿using EmployeeManagement.Models;
 using EmployeeManagement.Models.Dtos;
 using Microsoft.EntityFrameworkCore;
+
 namespace EmployeeManagement.Api.Models
 {
     public class EmployeeRepository : IEmployeeRepository
@@ -11,7 +12,7 @@ namespace EmployeeManagement.Api.Models
             this.appDbContext = appDbContext;
         }
 
-        public async Task<Employee> GetEmployee(int employeeId)
+        public async Task<Employee?> GetEmployee(int employeeId)
         {
             return await appDbContext.Employees
                 .Include(e => e.Department)
@@ -22,11 +23,6 @@ namespace EmployeeManagement.Api.Models
         {
             return await appDbContext.Employees.ToListAsync();
         }
-        //public async Task<Employee> GetEmployee(int employeeId)
-        //{
-        //    return await appDbContext.Employees.FirstOrDefaultAsync(e => e.EmployeeId == employeeId);
-        //}
-
 
         public async Task<Employee> AddEmployee(AddEmployeeDto employee)
         {
@@ -61,36 +57,36 @@ namespace EmployeeManagement.Api.Models
             }
             return null;
         }
-        public async void DeleteEmployee(int employeeId)
+
+        //public async Task DeleteEmployee(int employeeId)
+        //{
+        //    var result = await appDbContext.Employees
+        //    .FirstOrDefaultAsync(e => e.EmployeeId == employeeId);
+        //    if (result != null)
+        //    {
+        //        appDbContext.Employees.Remove(result);
+        //        await appDbContext.SaveChangesAsync();
+        //    }
+        //}
+
+        public async Task<Employee?> DeleteEmployee(int employeeId)
         {
-            var result = await appDbContext.Employees
-            .FirstOrDefaultAsync(e => e.EmployeeId == employeeId);
-            if (result != null)
-            {
-                appDbContext.Employees.Remove(result);
-                await appDbContext.SaveChangesAsync();
-            }
+            var empToDel = await appDbContext.Employees.FindAsync(employeeId);
+            if (empToDel is null)
+                return null;
+
+            appDbContext.Employees.Remove(empToDel);
+            await appDbContext.SaveChangesAsync();
+            return empToDel;
         }
 
-        Task<Employee> IEmployeeRepository.DeleteEmployee(int employeeId)
+        public async Task<IEnumerable<Employee>> Search(string name, Gender gender)
         {
-            throw new NotImplementedException();
-        }
-
-        public async Task<IEnumerable<Employee>> Search(string name, Gender? gender)
-        {
-            IQueryable<Employee> query = appDbContext.Employees;
-
-            if (!string.IsNullOrEmpty(name))
-            {
-                query = query.Where(e => e.FirstName.Contains(name)
-                || e.LastName.Contains(name));
-            }
-            if (gender != null)
-            {
-                query = query.Where(e => e.Gender == gender);
-            }
-            return await query.ToListAsync();
+            return await appDbContext.Employees
+                .Where(empl =>
+                    empl.Gender == gender &&
+                    empl.FirstName.ToLower().Equals(name.ToLower()))
+                .ToListAsync();
         }
 
         public async Task<Employee?> GetEmployeeByEmail(string email)

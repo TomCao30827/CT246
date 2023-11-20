@@ -1,10 +1,7 @@
 ﻿using EmployeeManagement.Api.Models;
 using EmployeeManagement.Models;
 using EmployeeManagement.Models.Dtos;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Threading.Tasks;
 namespace EmployeeManagement.Api.Controllers
 {
     [Route("api/[controller]")]
@@ -17,33 +14,23 @@ namespace EmployeeManagement.Api.Controllers
             this.employeeRepository = employeeRepository;
         }
         [HttpGet]
-        public async Task<ActionResult> GetEmployees()
+        public async Task<ActionResult<IEnumerable<Employee>>> GetEmployees()
         {
-            try
-            {
-                return Ok(await employeeRepository.GetEmployees());
-            }
-            catch (Exception)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError,
-                "Error retrieving data from the database");
-            }
+            var result = await employeeRepository.GetEmployees();
+            return result.Any()
+                ? Ok(result)
+                : NotFound("No record found!");
         }
 
         [HttpGet("{id:int}")]
         public async Task<ActionResult<Employee>> GetEmployee(int id)
         {
-            try
-            {
-                var result = await employeeRepository.GetEmployee(id);
-                if (result == null) return NotFound();
-                return result;
-            }
-            catch (Exception)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError,
-                "Error retrieving data from the database");
-            }
+            var result = await employeeRepository.GetEmployee(id);
+
+            if (result == null)
+                return NotFound($"Employee at id {id} not found!");
+
+            return result;
         }
 
         //[HttpPost]
@@ -76,6 +63,7 @@ namespace EmployeeManagement.Api.Controllers
         //    }
         //}
 
+        [HttpPost]
         public async Task<ActionResult<Employee>> CreateEmployee(AddEmployeeDto employee)
         {
             var emp = await employeeRepository.GetEmployeeByEmail(employee.Email);
@@ -131,39 +119,25 @@ namespace EmployeeManagement.Api.Controllers
         [HttpDelete("{id:int}")]
         public async Task<ActionResult<Employee>> DeleteEmployee(int id)
         {
-            
-                var employeeToDelete = await employeeRepository.GetEmployee(id);
-                Console.Write(employeeToDelete.ToString());
 
-                if (employeeToDelete == null)
-                {
-                    return NotFound($"Employee with Id = {id} not found");
-                }
-                else if (employeeToDelete != null)
-                return await employeeRepository.DeleteEmployee(id);
-                return Ok(DeleteEmployee);
-
+            var employeeToDelete = await employeeRepository.GetEmployee(id);
+            if (employeeToDelete == null)
+            {
+                return NotFound($"Employee with Id = {id} not found");
+            }
+            await employeeRepository.DeleteEmployee(id);
+            return Ok(employeeToDelete);
         }
 
-        [HttpGet("{search}")]
-        public async Task<ActionResult<IEnumerable<Employee>>>
-Search(string name, Gender? gender)
+        [HttpGet("search")]
+        public async Task<ActionResult<IEnumerable<Employee>>> Search(string name, Gender gender)
         {
-            try
+            var result = await employeeRepository.Search(name, gender);
+            if (result.Any())
             {
-                var result = await employeeRepository.Search(name, gender);
-                if (result.Any())
-                {
-                    return Ok(result);
-                }
-                return NotFound();
+                return Ok(result);
             }
-            catch (Exception)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError,
-                "Error retrieving data from the database");
-            }
+            return NotFound();
         }
-
     }
 }
