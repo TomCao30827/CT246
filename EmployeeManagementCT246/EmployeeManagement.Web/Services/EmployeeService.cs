@@ -46,30 +46,11 @@ namespace EmployeeManagement.Web.Services
             return await response.Content.ReadFromJsonAsync<Employee>();
         }
 
-        //public async Task DeleteEmployee(int id)
-        //{
-        //    await httpClient.DeleteAsync($"api/employees/{id}");
-        //}
-
         public async Task DeleteEmployee(int id)
         {
-            using (var client = new HttpClient())
-            {
-
-                // Gửi yêu cầu DELETE
-                HttpResponseMessage response = await client.DeleteAsync($"api/employees/{id}");
-
-                // Kiểm tra xem yêu cầu đã thành công hay không
-                if (response.IsSuccessStatusCode)
-                {
-                    Console.WriteLine("Xóa nhân viên thành công!");
-                }
-                else
-                {
-                    Console.WriteLine($"Lỗi: {response.StatusCode}");
-                }
-            }
+            await httpClient.DeleteAsync($"api/employees/{id}");
         }
+
 
     }
 }
