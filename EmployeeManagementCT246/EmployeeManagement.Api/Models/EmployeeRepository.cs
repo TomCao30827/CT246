@@ -12,9 +12,16 @@ namespace EmployeeManagement.Api.Models
             this.appDbContext = appDbContext;
         }
 
+        //public async Task<Employee?> GetEmployee(int employeeId)
+        //{
+        //    return await appDbContext.Employees.FindAsync(employeeId);
+        //}
+
         public async Task<Employee?> GetEmployee(int employeeId)
         {
-            return await appDbContext.Employees.FindAsync(employeeId);
+            return await appDbContext.Employees
+                .Include(e => e.Department)
+                .FirstOrDefaultAsync(e => e.EmployeeId == employeeId);
         }
 
         public async Task<IEnumerable<Employee>> GetEmployees()
