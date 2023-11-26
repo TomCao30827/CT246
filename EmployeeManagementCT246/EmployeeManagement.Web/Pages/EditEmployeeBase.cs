@@ -35,16 +35,20 @@ namespace EmployeeManagement.Web.Pages
         [Inject]
         public NavigationManager NavigationManager { get; set; }
 
+        public string PageHeader { get; set; }
+
         protected async override Task OnInitializedAsync()
         {
             int.TryParse(Id, out int employeeId);
 
             if (employeeId != 0)
             {
+                PageHeader = "Edit Employee";
                 Employee = await EmployeeService.GetEmployee(int.Parse(Id));
             }
             else
             {
+                PageHeader = "Create Employee";
                 Employee = new Employee
                 {
                     DepartmentId = 1,

@@ -68,10 +68,10 @@ namespace EmployeeManagement.Api.Controllers
         {
             var emp = await employeeRepository.GetEmployeeByEmail(employee.Email);
 
-            if (emp != null)
-            {
-                return BadRequest("Email already been taken");
-            }
+            //if (emp != null)
+            //{
+            //    return BadRequest("Email already been taken");
+            //}
 
             var createdEmployee = await employeeRepository.AddEmployee(employee);
 
